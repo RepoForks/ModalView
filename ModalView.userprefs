@@ -1,0 +1,21 @@
+﻿<Properties StartupItem="Demo/Demo.Droid/Demo.Droid.csproj">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Demo/Demo/NavigationExtension.cs">
+    <Files>
+      <File FileName="Demo/Demo/NavigationExtension.cs" Line="4" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ModalView" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Demo.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CD630147-AC23-4B19-90F4-72EA687F4076" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Demo.Droid PreferredExecutionTarget="Android.192.168.59.101:5555" />
+</Properties>

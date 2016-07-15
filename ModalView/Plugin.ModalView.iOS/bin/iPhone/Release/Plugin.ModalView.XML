@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.ModalView</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.ModalView.CrossModalView">
+             <summary>
+             Cross platform ModalView implemenations
+             </summary>
+            </member>
+        <member name="P:Plugin.ModalView.CrossModalView.Current">
+             <summary>
+             Current settings to use
+             </summary>
+            </member>
+        <member name="T:Plugin.ModalView.ModalViewImplementation">
+             <summary>
+             Implementation for ModalView
+             </summary>
+            </member>
+    </members>
+</doc>

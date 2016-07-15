@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Plugin.ModalView</id>
+        <version>1.0.0</version>
+        <title>ModalView Plugin for Xamarin Forms</title>
+        <authors>Alex Rainman</authors>
+        <owners>Alex Rainman</owners>
+        <licenseUrl>https://github.com/alexrainman/ModalView/blob/master/README.md</licenseUrl>
+        <projectUrl>https://github.com/alexrainman/ModalView</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>ModalView Plugin for Xamarin Forms</description>
+        <summary>ModalView Plugin for Xamarin Forms</summary>
+        <releaseNotes>https://github.com/alexrainman/ModalView/commits</releaseNotes>
+        <tags>modal view overlay xamarin forms ios android xamarin forms monotouch monodroid</tags>
+        <dependencies>
+			<group>
+				<dependency id="Xamarin.Forms" version="2.3.0.107"/>
+			</group>
+		</dependencies>
+    </metadata>
+    <files>
+        <!-- PCL -->
+        <file src="lib/Plugin.ModalView.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Plugin.ModalView.dll" />
+        <file src="lib/Plugin.ModalView.Abstractions.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Plugin.ModalView.Abstractions.dll" />
+
+        <!-- Xamarin.iOS (Unified)-->
+        <file src="lib/iOS/Plugin.ModalView.dll" target="lib\Xamarin.iOS10\Plugin.ModalView.dll" />
+        <file src="lib/Plugin.ModalView.Abstractions.dll" target="lib\Xamarin.iOS10\Plugin.ModalView.Abstractions.dll" />
+
+        <!-- Xamarin.Android -->
+        <file src="lib/Android/Plugin.ModalView.dll" target="lib\MonoAndroid\Plugin.ModalView.dll" />
+        <file src="lib/Plugin.ModalView.Abstractions.dll" target="lib\MonoAndroid\Plugin.ModalView.Abstractions.dll" />
+    </files>
+</package>
