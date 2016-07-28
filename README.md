@@ -22,9 +22,9 @@ CrossModalView.Current.PushCustomModal(view, desiredheight, false);
 ```
 
 - view: ContentView
-- desiredHeight: double, indicates the height of the modal view (optional, default full screen).
+- desiredHeight: double, indicates the height of the modal view (Optional, default full screen).
 - Be aware the requested height for the modal view will be higher in Android.
-- cornerRadius: bool (optional, default true, iOS only)
+- cornerRadius: bool (Optional, default true, iOS only)
 
 Pop a custom modal:
 
