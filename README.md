@@ -43,7 +43,10 @@ xmlns:controls="clr-namespace:Plugin.ModalView.Abstractions;assembly=Plugin.Moda
 Then add the xaml:
 
 ```xml
+<controls:MVButton Text="Click me!" />
 <controls:MVLabel Text="Some text." />
+<controls:MVPicker />
+<controls:MVSwitch />
 ```
 
 #### Known issues
