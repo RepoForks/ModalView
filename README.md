@@ -32,23 +32,103 @@ Pop a custom modal:
 CrossModalView.Current.PopCustomModal();
 ```
 
-### Provided custom controls
+**CUSTOM CONTROLS**
 
-You have to use custom controls for Button, Label, Picker and Switch (overriding the original renderer doesn't works in AlertDialog in Android)
-
-First add the xmlns namespace:
+You can use the provided custom controls that implement the fix for HeightRequest:
 
 ```xml
-xmlns:controls="clr-namespace:Plugin.ModalView.Abstractions;assembly=Plugin.ModalView.Abstractions"
+<controls:MVActivityIndicator x:Name="activityIndicator" IsRunning="true"/>
+<controls:MVButton x:Name="button" Text="Remove this page" Clicked="Handle_Clicked"/>
+<controls:MVDatePicker x:Name="datePicker" />
+<controls:MVEditor x:Name="editor" BackgroundColor="Silver"/>
+<controls:MVEntry x:Name="entry" />
+<controls:MVPicker x:Name="picker" />
+<controls:MVProgressBar x:Name="progressBar" Progress="0.5" />
+<controls:MVSearchBar x:Name="searchBar" />
+<controls:MVSlider x:Name="slider" />
+<controls:MVStepper x:Name="stepper" />
+<controls:MVSwitch x:Name="myswitch" />
+<controls:MVTimePicker x:Name="timePicker" />
+<controls:MVLabel x:Name="label" Text="My Label"/>
 ```
 
-Then add the xaml:
+If you have your own custom renderers they will have to ExportRenderer for this controls:
+
+```
+[assembly: ExportRenderer (typeof(MVButton), typeof(MyButtonRenderer))]
+```
+
+If you don't want to use them, as an alternative, take a look at these code snippet so you know what to do with your own controls:
+
+```
+public class MVLabel : Label // REQUIRED
+{
+	public CVLabel()
+	{
+		SetBinding(Label.HeightRequestProperty, new Binding("WidthRequest", BindingMode.Default, new LabelHeightConverter(), this, null, this));
+	}
+
+	protected override void OnSizeAllocated(double width, double height)
+	{
+		base.OnSizeAllocated(width, height);
+
+		WidthRequest = width;
+
+		this.LayoutTo(new Rectangle(this.X, this.Y, width, height));
+
+		this.InvalidateMeasure();
+	}
+}
+
+public class MVButton : Button 
+{
+	public CVButton()
+	{
+		if (HeightRequest == -1)
+		{
+			switch (Device.OS)
+			{
+				case TargetPlatform.iOS:
+					HeightRequest = 44;
+					break;
+				case TargetPlatform.Android:
+					HeightRequest = 48;
+					break;
+				default:
+					HeightRequest = 32;
+					break;
+			}
+		}
+	}
+}
+```
+
+**Default HeightRequest by platform**
+
+|Control|iOS|Android|UWP|
+| ------------------- | :-----------: | :-----------: | :------------------: |
+|ActivityIndicator|20|48|4|
+|Button|44|48|32|
+|DatePicker|30|45.5|32|
+|Editor|36.5|45.5|32|
+|Entry|30|45.5|32|
+|Picker|30|45.5|32|
+|ProgressBar|2|16|4|
+|Searchbar|44|45|32|
+|Slider|34|18|44|
+|Stepper|29|48|32|
+|Switch|31|27|40|
+|TimePicker|30|45.5|32|
+
+You can also use these values if you don't use the provided controls neither implement your own.
 
 ```xml
-<controls:MVButton Text="Click me!" />
-<controls:MVLabel Text="Some text." />
-<controls:MVPicker />
-<controls:MVSwitch />
+<Button.HeightRequest>
+        <OnPlatform x:TypeArguments="x:Double"
+                Android="48"
+                WinPhone="32"
+                iOS="44" />
+</Button.HeightRequest>
 ```
 
 #### Known issues
