@@ -120,7 +120,7 @@ public class MVButton : Button
 |Switch|31|27|40|
 |TimePicker|30|45.5|32|
 
-You can also use these values if you don't use the provided controls neither implement your own.
+You can also use these values OnPlatform if you don't use the provided controls, neither implement your own.
 
 ```xml
 <Button.HeightRequest>
